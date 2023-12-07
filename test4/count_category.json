@@ -1,0 +1,202 @@
+[
+    {
+        "_id": "default",
+        "count": 303
+    },
+    {
+        "_id": "nonfiction",
+        "count": 220
+    },
+    {
+        "_id": "sequential art",
+        "count": 150
+    },
+    {
+        "_id": "add a comment",
+        "count": 134
+    },
+    {
+        "_id": "fiction",
+        "count": 130
+    },
+    {
+        "_id": "young adult",
+        "count": 108
+    },
+    {
+        "_id": "fantasy",
+        "count": 96
+    },
+    {
+        "_id": "romance",
+        "count": 70
+    },
+    {
+        "_id": "mystery",
+        "count": 64
+    },
+    {
+        "_id": "food and drink",
+        "count": 60
+    },
+    {
+        "_id": "childrens",
+        "count": 58
+    },
+    {
+        "_id": "historical fiction",
+        "count": 52
+    },
+    {
+        "_id": "poetry",
+        "count": 38
+    },
+    {
+        "_id": "classics",
+        "count": 37
+    },
+    {
+        "_id": "history",
+        "count": 36
+    },
+    {
+        "_id": "horror",
+        "count": 34
+    },
+    {
+        "_id": "womens fiction",
+        "count": 34
+    },
+    {
+        "_id": "science fiction",
+        "count": 32
+    },
+    {
+        "_id": "science",
+        "count": 28
+    },
+    {
+        "_id": "music",
+        "count": 26
+    },
+    {
+        "_id": "business",
+        "count": 24
+    },
+    {
+        "_id": "thriller",
+        "count": 22
+    },
+    {
+        "_id": "travel",
+        "count": 22
+    },
+    {
+        "_id": "philosophy",
+        "count": 22
+    },
+    {
+        "_id": "humor",
+        "count": 20
+    },
+    {
+        "_id": "autobiography",
+        "count": 18
+    },
+    {
+        "_id": "art",
+        "count": 16
+    },
+    {
+        "_id": "psychology",
+        "count": 14
+    },
+    {
+        "_id": "religion",
+        "count": 14
+    },
+    {
+        "_id": "christian fiction",
+        "count": 12
+    },
+    {
+        "_id": "new adult",
+        "count": 12
+    },
+    {
+        "_id": "spirituality",
+        "count": 12
+    },
+    {
+        "_id": "sports and games",
+        "count": 10
+    },
+    {
+        "_id": "self help",
+        "count": 10
+    },
+    {
+        "_id": "biography",
+        "count": 10
+    },
+    {
+        "_id": "health",
+        "count": 8
+    },
+    {
+        "_id": "christian",
+        "count": 6
+    },
+    {
+        "_id": "contemporary",
+        "count": 6
+    },
+    {
+        "_id": "politics",
+        "count": 6
+    },
+    {
+        "_id": "historical",
+        "count": 4
+    },
+    {
+        "_id": "parenting",
+        "count": 2
+    },
+    {
+        "_id": "crime",
+        "count": 2
+    },
+    {
+        "_id": "suspense",
+        "count": 2
+    },
+    {
+        "_id": "short stories",
+        "count": 2
+    },
+    {
+        "_id": "novels",
+        "count": 2
+    },
+    {
+        "_id": "paranormal",
+        "count": 2
+    },
+    {
+        "_id": "cultural",
+        "count": 2
+    },
+    {
+        "_id": "adult fiction",
+        "count": 2
+    },
+    {
+        "_id": "erotica",
+        "count": 2
+    },
+    {
+        "_id": "academic",
+        "count": 2
+    }
+]
