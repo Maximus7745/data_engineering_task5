@@ -114,18 +114,13 @@ def get_count_category(collection: collection.Collection)-> list[dict]:
     return list(collection.aggregate(query))
 
 
-def get_max_price_min_price(collection: collection.Collection)-> list[dict]:
+def get_max_price_min_stars(collection: collection.Collection)-> list[dict]:
     #Для минимального рейтинга получить максимальную цену
     query =[
         {
-            "$group": {
-                "_id": "$stars",
-                "max_price": {"$max": "$price"}
-            }
-        },
-        {
             "$sort": {
-                "_id": 1
+                "stars": 1,
+                "price": -1
             }
         },
         {
@@ -140,9 +135,13 @@ def get_stars_stat_group_by_category_filter_price_availability(collection: colle
     query =[
         {
             "$match": {
-                "$or": [{"availability": {"$gt": 0, "$lt": 3}}, {"availability":{"$gt": 10, "$lt": 30}}],
-                "category": {"$in": ["romance", "fiction", "history"]},
-                "$or": [{"price": {"$gt": 1, "$lt": 10}}, {"price":{"$gt": 50, "$lt": 100}}]
+                "$and": [
+                    {"$or": [{"availability": {"$gt": 0, "$lt": 3}}, 
+                             {"availability":{"$gt": 10, "$lt": 30}}]},
+                    {"$or": [{"price": {"$gt": 1, "$lt": 10}}, 
+                             {"price":{"$gt": 50, "$lt": 100}}]}
+                ],
+                "category": {"$in": ["romance", "fiction", "history"]}
             }
         },
         {
@@ -238,7 +237,7 @@ result["filter_by_url_availability_sort_by_stars"] = filter_by_url_availability_
 result["count_filter_by_category_price"] = get_count_filter_by_category_price(connect())
 result["price_stat"] = get_price_stat(connect())
 result["count_category"] = get_count_category(connect())
-result["max_price_min_price"] = get_max_price_min_price(connect())
+result["max_price_min_price"] = get_max_price_min_stars(connect())
 result["stars_stat_group_by_category_filter_price_availability"] = get_stars_stat_group_by_category_filter_price_availability(connect())
 result["max_price_group_by_category_stars"] = get_max_price_group_by_category_stars(connect())
 add_data_into_json("result4", result) # это всё вместе

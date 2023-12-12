@@ -32,7 +32,7 @@ def get_selary_stat(collection: collection.Collection)-> list[dict]:
             }
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 
 def get_count_jobs(collection: collection.Collection)-> list[dict]:
     query =[
@@ -48,7 +48,7 @@ def get_count_jobs(collection: collection.Collection)-> list[dict]:
             }
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 
 def get_param1_stat_group_by_param2(collection: collection.Collection, param1, param2)-> list[dict]:
     query =[
@@ -61,45 +61,35 @@ def get_param1_stat_group_by_param2(collection: collection.Collection, param1, p
             }
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 
 def get_max_salary_min_age(collection: collection.Collection)-> list[dict]:
     query =[
         {
-            "$group": {
-                "_id": "$age",
-                "max_salary": {"$max": "$salary"}
-            }
-        },
-        {
             "$sort": {
-                "_id": 1
+                "age": 1,
+                "salary": -1
             }
         },
         {
             "$limit": 1
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 
 def get_min_salary_max_age(collection: collection.Collection)-> list[dict]:
     query =[
         {
-            "$group": {
-                "_id": "$age",
-                "min_salary": {"$min": "$salary"}
-            }
-        },
-        {
             "$sort": {
-                "_id": -1
+                "age": -1,
+                "salary": 1
             }
         },
         {
             "$limit": 1
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 
 def get_age_stat_group_by_city_filter_salary(collection: collection.Collection)-> list[dict]:
     query =[
@@ -120,7 +110,7 @@ def get_age_stat_group_by_city_filter_salary(collection: collection.Collection)-
             "$sort": {"avg": -1}
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 
 def get_salary_stat_group_by_city_job_age_filter_age(collection: collection.Collection)-> list[dict]:
     query =[
@@ -140,7 +130,7 @@ def get_salary_stat_group_by_city_job_age_filter_age(collection: collection.Coll
             }
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 
 def random_query(collection: collection.Collection)-> list[dict]:
     #Найти среднюю salary для "Программист", "IT-специалист", "Инженер" для каждого возраста в возрасте от 20 до 30 лет и сортировать по возрастанию
@@ -161,7 +151,7 @@ def random_query(collection: collection.Collection)-> list[dict]:
             "$sort": {"avg": -1}
         }
     ]
-    return collection.aggregate(query)
+    return list(collection.aggregate(query))
 data = get_data_from_pickle(r"data\var_24\task_2_item.pkl")
 insert_data(connect(), data)
 result = dict()
